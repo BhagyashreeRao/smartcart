@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+  head
+    title Smart-Cart
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      body{
+      background-color: #b3e0ff;
+      }
+      .navbar {
+      margin-bottom: 50px;
+      border-radius: 25px;
+      }
+      .jumbotron {
+      margin-bottom: 0;
+      background-color: #002e4d ;
+      color:white;
+      }
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      }
+      p {
+      margin-top : 30px
+      margin-bottom : 50px;
+      }
+      button {
+      margin-bottom : 40px;
+      }
+  body
+    .jumbotron
+      .container.text-center
+        h1 Smart-cart
+        p Start smart shopping here!
+    .container(style='margin-top: 50px; padding : 20px 20px 30px 20px;')
+      center
+        p
+          b Already have an account
+        a(href='/users/login/screen', role='button')
+          button.btn.btn-primary.btn-lg(type='button') Login
+        br
+        br
+       
+        p
+          b New here? Create an account 
+        a(href='/users/signup/screen', role='button')
+          button.btn.btn-primary.btn-lg(type='button') SignUp
+
+        ul.pager
+          li.next
+            a(href='/') ← Back
+
+    footer.container-fluid.text-center
+      p  © Smart-cart 2017 

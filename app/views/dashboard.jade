@@ -1,0 +1,92 @@
+doctype html
+html(lang='en')
+  head
+    title Smart-Cart
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      body{
+      background-color: #b3e0ff;
+      }
+      .jumbotron {
+      margin-bottom: 0;
+      background-color: #002e4d ;
+      color:white;
+      }
+      .navbar{
+      margin-bottom:0;
+      background-color: #000040
+      }
+      .productClass
+      {
+      margin-left : 50px;
+      }
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      }
+      p {
+      margin-top : 30px
+      margin-bottom : 50px;
+      }
+      button {
+      margin-bottom : 40px;
+      }
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        a.navbar-brand(href='#')
+            span.glyphicon.glyphicon-user
+            |  Hi #{user.firstName}
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='http://localhost:3000/users/cart/'+user._id)
+              span.glyphicon.glyphicon-shopping-cart
+              |  View cart
+          li
+            a(href='/users/logout')
+              span.glyphicon.glyphicon-log-out
+              |  Logout
+
+    .jumbotron
+      .container.text-center
+        h1 Smart-cart
+        p Start smart shopping here!
+    .container
+      if messages.error
+        .alert.alert-danger
+         div= messages.error
+      if messages.info
+        .alert.alert-info
+         div= messages.info
+      if messages.success
+        .alert.alert-success
+         div= messages.success        
+    .container(style='margin-top: 50px; padding : 20px 20px 20px 20px;')
+      h2  All products : 
+      br
+      div(style='margin-left : 60px;')
+                
+        each product in products
+          span Product Name : 
+          span=product.productName
+          br
+          span Product Details : 
+          span=product.productDetails
+          br
+          span Product cost : 
+          span=product.productCost
+          br
+          br
+          a(href='http://localhost:3000/users/viewProduct/'+product._id ,role='button')
+            button.btn.btn-primary.btn-sm view product    
+          br
+          br    
+        else
+          span There are no products
+          br
+    footer.container-fluid.text-center
+      p  © Smart-cart 2017 

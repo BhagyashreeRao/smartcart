@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+  head
+    title Smart-Cart
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      body{
+      background-color: #b3e0ff;
+      }
+      .navbar {
+      margin-bottom: 50px;
+      border-radius: 25px;
+      }
+      .jumbotron {
+      margin-bottom: 0;
+      background-color: #002e4d ;
+      color:white;
+      }
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      }
+      .form{
+      margin-top: 5%;
+      }
+  body
+    .jumbotron
+      .container.text-center
+        h1 Smart-cart
+        p Start smart shopping here!
+    .container.form
+      form.form-horizontal(action='/users/signup', method='post')
+        .form-group
+          label.control-label.col-sm-2(for='firstName') Firstname:
+          .col-sm-10
+            input#firstName.form-control(type='text', name="firstName",placeholder='Enter firstname')
+        .form-group
+          label.control-label.col-sm-2(for='lastName') lastname:
+          .col-sm-10
+            input#lastName.form-control(type='text', name="lastName",placeholder='Enter lastname')
+        
+        .form-group
+          label.control-label.col-sm-2(for='email') Email:
+          .col-sm-10
+            input#email.form-control(type='email',name="email", placeholder='Enter your email')
+        .form-group
+          label.control-label.col-sm-2(for='mobileNumber') Mobile Number:
+          .col-sm-10
+            input#mobileNumber.form-control(type='number', name="mobileNumber",placeholder='Enter mobile number')
+        .form-group
+          label.control-label.col-sm-2(for='pwd') Password:
+          .col-sm-10
+            input#pwd.form-control(type='password', name="password",placeholder='Enter password')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            center
+              button.btn.btn-default(type='submit') Signup
+        ul.pager
+          li.next
+            a(href='/users') ← Back      

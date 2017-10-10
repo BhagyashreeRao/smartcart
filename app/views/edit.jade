@@ -1,0 +1,86 @@
+doctype html
+html(lang='en')
+  head
+    title Smart-Cart
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      body{
+      background-color: #b3e0ff;
+      }
+      .navbar {
+      margin-bottom: 50px;
+      border-radius: 25px;
+      }
+      .jumbotron {
+      margin-bottom: 0;
+      background-color: #002e4d ;
+      color:white;
+      }
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      }
+      .form{
+      margin-top: 5%;
+      }
+  body
+    .jumbotron
+      .container.text-center
+        h1 Smart-cart
+        p Start smart shopping here!
+    .container
+      if messages.error
+        .alert.alert-danger
+         div= messages.error
+      if messages.info
+        .alert.alert-info
+         div= messages.info
+      if messages.success
+        .alert.alert-success
+         div= messages.success        
+    .container.form
+      form.form-horizontal(action='/product/editProduct/'+product._id, method='post')
+        .form-group
+          label.control-label.col-sm-2(for='productName') product name:
+          .col-sm-10
+            input#productName.form-control(type='text', name="productName",value=product.productName,placeholder='Enter product name')
+        .form-group
+          label.control-label.col-sm-2(for='productCategory') product category:
+          .col-sm-10
+            input#productCategories.form-control(type='text',name="productCategories",value=product.productCategories, placeholder='Enter categories')
+        .form-group
+          label.control-label.col-sm-2(for='manufacturer') Manufacturer:
+          .col-sm-10
+            input#manufacturer.form-control(type='text', name="manufacturer",value=product.manufacturer,placeholder='Enter a manufacturer')
+        .form-group
+          label.control-label.col-sm-2(for='productDetails') Product details:
+          .col-sm-10
+            input#productDetails.form-control(type='text',name="productDetails",value=product.productDetails, placeholder='Enter product details')
+        .form-group
+          label.control-label.col-sm-2(for='productCost') Product Cost:
+          .col-sm-10
+            input#productCost.form-control(type='number',name="productCost", value=product.productCost,placeholder='Enter product Cost')
+          
+        .form-group
+          label.control-label.col-sm-2(for='codAvailable') Cod Available:
+          .col-sm-10
+            input#codAvailable.form-control(type='boolean',name="codAvailable",value=product.codAvailable, placeholder='Is CoD available?')
+        .form-group
+          label.control-label.col-sm-2(for='availability') Available:
+          .col-sm-10
+            input#availability.form-control(type='boolean',name="availability", value=product.availability, placeholder='Availability')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            center
+              button.btn.btn-default(type='submit') Confirm edit
+        br
+        br
+        br      
+    ul.pager
+          li.next
+            a(href='/product/viewAllProducts') ← Back      
+          

@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  head
+    title Smart-Cart
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      body{
+      background-color: #b3e0ff;
+      }
+      .navbar {
+      margin-bottom: 50px;
+      border-radius: 25px;
+      }
+      .jumbotron {
+      margin-bottom: 0;
+      background-color: #002e4d ;
+      color:white;
+      }
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      }
+  body
+    .jumbotron
+      .container.text-center
+        h1 Smart-cart
+        p Start smart shopping here!
+    .container
+      if messages.error
+        .alert.alert-danger
+         div= messages.error
+      if messages.info
+        .alert.alert-info
+         div= messages.info
+      if messages.success
+        .alert.alert-success
+         div= messages.success     
+    .container
+      block content
+    
