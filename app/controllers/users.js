@@ -366,11 +366,11 @@ userRouter.post('/forgot', function(req, res, next) {
     },
     function(token, user, done) {
       var smtpTransport = nodemailer.createTransport({
-        service: 'SENDGRID',
+        service: 'GMAIL',
         auth: {
           type: 'OAuth2',
-          user: 'Smart-cart8',
-          pass: 'smartcart8'
+          user: '!!!YOUR GMAIL USERNAME!!!',
+          pass: '!!!!YOUR GMAIL PASSWORD!!!'
         }
       });
       var mailOptions = {
@@ -431,6 +431,7 @@ userRouter.post('/reset/:token', function(req, res) {
       var smtpTransport = nodemailer.createTransport('SMTP', {
         service: 'GMAIL',
         auth: {
+          type: 'OAuth2'  
           user: '!!! YOUR GMAIL USERNAME !!!',
           pass: '!!! YOUR GMAIL PASSWORD !!!'
         }
